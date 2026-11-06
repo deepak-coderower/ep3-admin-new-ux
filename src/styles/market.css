@@ -1,0 +1,41 @@
+/* Markets module styles (Instruments, Products, Calendars). */
+
+/* ---------- Section form blocks (market-form.tsx) ---------- */
+/* .tag lives in layout.css (shared with filter chips). */
+.tag svg { width: 12px; height: 12px; }
+.list-block { grid-column: 1 / -1; min-width: 0; }
+.list-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 30px; margin-bottom: 8px; }
+.list-subtitle { margin: 16px 0 6px; }
+.list-empty { color: var(--muted-foreground); font-size: 13px; }
+.list-row { display: grid; justify-items: start; gap: 8px; padding: 14px 0; border-top: 1px solid var(--border); }
+.list-row > .form-grid { width: 100%; }
+.leg-row { padding-bottom: 14px; }
+.meta-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: end; gap: 12px; margin-bottom: 12px; }
+.meta-row .btn-icon { margin-bottom: 5px; }
+.hours-list { border: 1px solid var(--border); border-radius: var(--radius-md); }
+.hours-row { display: flex; align-items: center; gap: 12px; min-height: 42px; padding: 3px 6px 3px 12px; border-bottom: 1px solid var(--border); }
+.hours-row:last-child { border-bottom: 0; }
+.hours-text { white-space: pre-wrap; font-weight: 500; }
+.hours-row em { color: var(--muted-foreground); }
+.hours-acts { display: flex; margin-left: auto; }
+.holiday-list { display: grid; gap: 2px; }
+.calc-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.calc-row p { margin: 0; }
+.limit-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.limit-card { padding: 14px; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.limit-card .section-title { margin-bottom: 10px; font-size: 14px; }
+.limit-row { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 4px 12px; margin-bottom: 10px; }
+.limit-row:last-child { margin-bottom: 0; }
+.limit-row .input { min-height: 40px; }
+.limit-err { grid-column: 1 / -1; }
+.read-subhead { padding: 12px 14px 6px; border-bottom: 1px solid var(--border); color: var(--title); font-size: 13.5px; font-weight: 600; }
+.table-head .info-tip { vertical-align: -4px; }
+
+/* ---------- Wide sheet (module-head.tsx) ---------- */
+.sheet-wide .info-list { margin: 0; }
+
+@media (max-width: 680px) {
+  .meta-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .meta-row .row:first-child { grid-column: 1 / -1; }
+  .hours-row { flex-wrap: wrap; }
+}
