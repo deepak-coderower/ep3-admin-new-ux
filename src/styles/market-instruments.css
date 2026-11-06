@@ -19,7 +19,6 @@
 .house-cell { max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
 .inst-table .num { min-width: 76px; }
 .inst-table .acts { box-shadow: -1px 0 0 var(--border), -10px 0 12px -10px var(--scroll-thumb-hover); }
-.inst-table .row-link:hover .acts, .inst-table .table-row[data-state="open"] .acts { background: linear-gradient(var(--accent), var(--accent)), var(--card); }
 .text-bad { color: var(--bad-fg); font-weight: 500; }
 @media (min-width: 1700px) {
   .desc-cell { max-width: 340px; }

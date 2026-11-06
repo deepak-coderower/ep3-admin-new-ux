@@ -173,7 +173,7 @@ export function FirmsListPage() {
                         className="row-link"
                         data-deleted={f.deleted || undefined}
                         tabIndex={0}
-                        onClick={e => { if (!(e.target as HTMLElement).closest('a, button, input')) navigate(href) }}
+                        onClick={e => { if (e.currentTarget.contains(e.target as Node) && !(e.target as HTMLElement).closest('a, button, input')) navigate(href) }}
                         onKeyDown={e => { if (e.key === 'Enter' && e.target === e.currentTarget) navigate(href) }}
                       >
                         <TableCell>

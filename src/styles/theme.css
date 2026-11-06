@@ -73,8 +73,32 @@
   --shadow-lg: 0 28px 70px rgba(15, 27, 51, 0.28), 0 2px 8px rgba(15, 27, 51, 0.1);
   --overlay: rgba(15, 27, 51, 0.32);
 
-  --control-h: 34px;
-  --sidebar-w: 252px;
+  /* DCO-style shell: icon rail, square controls */
+  --brand-blue: #3b87c8;
+  --brand-navy: #133487;
+  --btn-gradient: linear-gradient(133.98deg, #3b87c8 0, #133487 100%);
+  --btn-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  --rail-bg: #f3f3f3;
+  --rail-border: #e5e5e5;
+  --rail-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  --rail-icon: #3b87c8;
+  --rail-icon-active: #a0ca3e;
+  --rail-text: #707070;
+  --rail-hover: #ffffff;
+  --field-border: rgba(0, 0, 0, 0.23);
+  --field-bg: #ffffff;
+  --table-border: rgba(0, 0, 0, 0.1);
+  --table-head-bg: #fafafa;
+  --table-head-fg: #707070;
+  --table-row-line: #f0f0f0;
+  --table-stripe: #fafafa;
+  --label-fg: #133487;
+  --control-r: 4px;
+  --outline-fg: #133487;
+
+  --control-h: 36px;
+  --sidebar-w: 64px;
+  --sidebar-open-w: 252px;
   --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", "Cascadia Mono", Consolas, Menlo, monospace;
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
@@ -146,6 +170,27 @@
   --shadow-md: 0 10px 34px rgba(0, 0, 0, 0.42), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
   --overlay: rgba(3, 7, 15, 0.58);
+
+  --brand-blue: #7db6ec;
+  --brand-navy: #2a67c4;
+  --btn-gradient: linear-gradient(133.98deg, #3b87c8 0, #1f4fb0 100%);
+  --btn-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.45);
+  --rail-bg: #15181e;
+  --rail-border: rgba(255, 255, 255, 0.08);
+  --rail-shadow: 2px 0 4px rgba(0, 0, 0, 0.4);
+  --rail-icon: #7db6ec;
+  --rail-icon-active: #b9dd62;
+  --rail-text: #c2c7d0;
+  --rail-hover: rgba(255, 255, 255, 0.07);
+  --field-border: rgba(255, 255, 255, 0.23);
+  --field-bg: #15181e;
+  --table-border: rgba(255, 255, 255, 0.1);
+  --table-head-bg: #1c2027;
+  --table-head-fg: #969daa;
+  --table-row-line: rgba(255, 255, 255, 0.06);
+  --table-stripe: rgba(255, 255, 255, 0.025);
+  --label-fg: #c2c7d0;
+  --outline-fg: #7db6ec;
 }
 
 @media (pointer: coarse) {

@@ -94,19 +94,16 @@ export function Pager({ state, total, onChange, sizes = [10, 25, 50] }: { state:
   }
   return (
     <div className="pager">
-      <span>{total ? start + 1 : 0}–{Math.min(start + size, total)} of {total}</span>
-      <div className="pager-actions">
-        <SelectField
-          className="pager-size"
-          aria-label="Rows per page"
-          value={String(size)}
-          options={sizes.map(n => ({ value: String(n), label: `${n} rows` }))}
-          onChange={v => { state.size = Number(v); state.page = 0; onChange() }}
-        />
-        <Button variant="ghost" size="icon" aria-label="Previous Page" disabled={page === 0} onClick={() => move(-1)}><ChevronLeft size={18} /></Button>
-        <span>{page + 1} of {pages}</span>
-        <Button variant="ghost" size="icon" aria-label="Next Page" disabled={page >= pages - 1} onClick={() => move(1)}><ChevronRight size={18} /></Button>
-      </div>
+      <Button variant="secondary" className="pager-btn" aria-label="Previous Page" disabled={page === 0} onClick={() => move(-1)}><ChevronLeft size={16} />Previous</Button>
+      <span className="pager-info">{total ? start + 1 : 0}–{Math.min(start + size, total)} of {total} · Page {page + 1} of {pages}</span>
+      <SelectField
+        className="pager-size"
+        aria-label="Rows per page"
+        value={String(size)}
+        options={sizes.map(n => ({ value: String(n), label: `${n} rows` }))}
+        onChange={v => { state.size = Number(v); state.page = 0; onChange() }}
+      />
+      <Button variant="secondary" className="pager-btn" aria-label="Next Page" disabled={page >= pages - 1} onClick={() => move(1)}>Next<ChevronRight size={16} /></Button>
     </div>
   )
 }

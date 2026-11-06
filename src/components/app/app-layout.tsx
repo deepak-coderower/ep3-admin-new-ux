@@ -1,56 +1,41 @@
 import { useEffect, useRef, useState } from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router'
-import { PanelLeft } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Menu } from 'lucide-react'
 import { AppSidebar } from '@/components/app/app-sidebar'
 import { Ep3Logo } from '@/components/app/logo'
-import { SIDE_KEY } from '@/data/config'
 import { isSignedIn } from '@/lib/session'
-import { storage } from '@/lib/storage'
 import { cn } from '@/lib/utils'
 
-/** Signed-in shell: sidebar, mobile top bar and the scrolling main view. */
+/** Signed-in shell: icon rail and the scrolling main view. */
 export function AppLayout() {
   const location = useLocation()
-  const [collapsed, setCollapsed] = useState(() => storage.get(SIDE_KEY) === '1')
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [animating, setAnimating] = useState(false)
+  const [open, setOpen] = useState(false)
   const mainRef = useRef<HTMLElement>(null)
 
-  // Each page starts at the top with its title focused, like the prototype's route().
+  // Each page starts at the top with its title focused, and the expanded menu closes.
   useEffect(() => {
-    setMobileOpen(false)
+    setOpen(false)
     if (mainRef.current) mainRef.current.scrollTop = 0
     const title = document.querySelector<HTMLElement>('.large-title')
     title?.focus({ preventScroll: true })
   }, [location.pathname, location.search])
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMobileOpen(false) }
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [])
 
   if (!isSignedIn()) return <Navigate to="/" replace />
 
-  const toggle = () => {
-    if (window.matchMedia('(max-width: 860px)').matches) { setMobileOpen(o => !o); return }
-    setAnimating(true)
-    setTimeout(() => setAnimating(false), 400)
-    setCollapsed(c => {
-      storage.set(SIDE_KEY, c ? '0' : '1')
-      return !c
-    })
-  }
-
   return (
-    <div className={cn('app', collapsed && 'side-min', mobileOpen && 'side-open', animating && 'side-anim')}>
+    <div className={cn('app', open && 'side-open')}>
       <div className="topbar">
-        <Button variant="ghost" size="icon" aria-label="Show Navigation" onClick={() => setMobileOpen(true)}><PanelLeft size={18} /></Button>
+        <button type="button" className="side-toggle" aria-label="Show Navigation" onClick={() => setOpen(true)}><Menu size={26} /></button>
         <Ep3Logo className="logo" />
       </div>
-      <div className="scrim" onClick={() => setMobileOpen(false)} />
-      <AppSidebar collapsed={collapsed} onToggle={toggle} onNavigate={() => setMobileOpen(false)} />
+      <div className="scrim" onClick={() => setOpen(false)} />
+      <AppSidebar open={open} onToggle={() => setOpen(o => !o)} onNavigate={() => setOpen(false)} />
       <main className="main" id="view" ref={mainRef}>
         <Outlet />
       </main>
