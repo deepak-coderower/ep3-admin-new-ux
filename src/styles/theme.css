@@ -1,4 +1,4 @@
-/* Design tokens. shadcn variable names, EP3 palette. */
+/* Design tokens. shadcn variable names, colours from the EP3 admin prototype v1. */
 :root {
   color-scheme: light;
   --radius: 0.625rem;
@@ -14,8 +14,8 @@
   --card-foreground: #101828;
   --popover: #ffffff;
   --popover-foreground: #101828;
-  --primary: #1a46a6;
-  --primary-hover: #143a8f;
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
   --primary-foreground: #ffffff;
   --secondary: #f2f4f7;
   --secondary-hover: #e6e8ec;
@@ -23,9 +23,9 @@
   --muted: #f2f4f7;
   --muted-foreground: #5b6474;
   --subtle-foreground: #414b5c;
-  --accent: rgba(59, 135, 200, 0.14);
-  --accent-hover: rgba(59, 135, 200, 0.22);
-  --accent-foreground: #1b4faf;
+  --accent: rgba(37, 99, 235, 0.09);
+  --accent-hover: rgba(37, 99, 235, 0.16);
+  --accent-foreground: #1d4ed8;
   --destructive: #c2402a;
   --destructive-hover: #a93521;
   --destructive-foreground: #ffffff;
@@ -33,13 +33,13 @@
   --border-strong: rgba(16, 24, 40, 0.2);
   --border-soft: rgba(16, 24, 40, 0.045);
   --input: rgba(16, 24, 40, 0.2);
-  --ring: #1b4faf;
-  --title: #133487;
-  --link: #1b4faf;
+  --ring: #1d4ed8;
+  --title: #0f172a;
+  --link: #1d4ed8;
 
   --nav-active: rgba(16, 24, 40, 0.065);
-  --nav-icon: #5b6474;
-  --nav-icon-active: #133487;
+  --nav-icon: #2563c4;
+  --nav-icon-active: #4c8a12;
   --logoff: #b91c1c;
   --logoff-bg: rgba(185, 28, 28, 0.07);
   --logoff-bg-hover: rgba(185, 28, 28, 0.13);
@@ -47,17 +47,17 @@
   --seg-active: #ffffff;
   --seg-shadow: 0 1px 2px rgba(16, 24, 40, 0.14);
 
-  --ok-fg: #4c6e0a;
-  --ok-bg: #eef6da;
+  --ok-fg: #15803d;
+  --ok-bg: #dcfce7;
   --ok-dot: #7ba61a;
-  --warn-fg: #8a5200;
-  --warn-bg: #fdf1da;
+  --warn-fg: #b45309;
+  --warn-bg: #ffedd5;
   --warn-dot: #d08a12;
   --bad-fg: #b23a25;
   --bad-bg: #fbe9e5;
   --bad-dot: #c2402a;
-  --info-fg: #1b4faf;
-  --info-bg: rgba(59, 135, 200, 0.14);
+  --info-fg: #1d4ed8;
+  --info-bg: #dbeafe;
   --info-dot: #3b87c8;
   --neutral-fg: #414b5c;
   --neutral-bg: #e6e8ec;
@@ -65,6 +65,9 @@
   --buy-bg: rgba(59, 135, 200, 0.08);
   --sell-bg: rgba(194, 64, 42, 0.07);
   --today-bg: rgba(59, 135, 200, 0.08);
+  --chip-bg: #eef0ff;
+  --chip-line: #c7ccf7;
+  --chip-fg: #3730a3;
 
   --scroll-thumb: rgba(16, 24, 40, 0.2);
   --scroll-thumb-hover: rgba(16, 24, 40, 0.36);
@@ -73,28 +76,28 @@
   --shadow-lg: 0 28px 70px rgba(15, 27, 51, 0.28), 0 2px 8px rgba(15, 27, 51, 0.1);
   --overlay: rgba(15, 27, 51, 0.32);
 
-  /* DCO-style shell: icon rail, square controls */
-  --brand-blue: #3b87c8;
-  --brand-navy: #133487;
-  --btn-gradient: linear-gradient(133.98deg, #3b87c8 0, #133487 100%);
-  --btn-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  --rail-bg: #f3f3f3;
-  --rail-border: #e5e5e5;
-  --rail-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-  --rail-icon: #3b87c8;
-  --rail-icon-active: #a0ca3e;
-  --rail-text: #707070;
-  --rail-hover: #ffffff;
-  --field-border: rgba(0, 0, 0, 0.23);
+  /* Shell (icon rail, square controls) in the v1 palette */
+  --brand-blue: #1d4ed8;
+  --brand-navy: #1e40af;
+  --btn-gradient: #1d4ed8;
+  --btn-shadow: 0 1px 2px rgba(19, 52, 135, 0.35);
+  --rail-bg: #f4f5f7;
+  --rail-border: rgba(16, 24, 40, 0.09);
+  --rail-shadow: none;
+  --rail-icon: #2563c4;
+  --rail-icon-active: #4c8a12;
+  --rail-text: #101828;
+  --rail-hover: rgba(16, 24, 40, 0.065);
+  --field-border: rgba(16, 24, 40, 0.2);
   --field-bg: #ffffff;
-  --table-border: rgba(0, 0, 0, 0.1);
-  --table-head-bg: #fafafa;
-  --table-head-fg: #707070;
-  --table-row-line: #f0f0f0;
-  --table-stripe: #fafafa;
-  --label-fg: #133487;
+  --table-border: rgba(16, 24, 40, 0.09);
+  --table-head-bg: #f8fafc;
+  --table-head-fg: #414b5c;
+  --table-row-line: rgba(16, 24, 40, 0.09);
+  --table-stripe: transparent;
+  --label-fg: #101828;
   --control-r: 4px;
-  --outline-fg: #133487;
+  --outline-fg: #1d4ed8;
 
   --control-h: 36px;
   --sidebar-w: 64px;
@@ -163,6 +166,9 @@
   --buy-bg: rgba(125, 182, 236, 0.09);
   --sell-bg: rgba(255, 155, 133, 0.08);
   --today-bg: rgba(125, 182, 236, 0.08);
+  --chip-bg: rgba(129, 140, 248, 0.16);
+  --chip-line: rgba(129, 140, 248, 0.4);
+  --chip-fg: #c7d2fe;
 
   --scroll-thumb: rgba(255, 255, 255, 0.18);
   --scroll-thumb-hover: rgba(255, 255, 255, 0.32);
@@ -172,24 +178,24 @@
   --overlay: rgba(3, 7, 15, 0.58);
 
   --brand-blue: #7db6ec;
-  --brand-navy: #2a67c4;
-  --btn-gradient: linear-gradient(133.98deg, #3b87c8 0, #1f4fb0 100%);
-  --btn-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.45);
-  --rail-bg: #15181e;
+  --brand-navy: #3474d2;
+  --btn-gradient: #2a67c4;
+  --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --rail-bg: #08090c;
   --rail-border: rgba(255, 255, 255, 0.08);
-  --rail-shadow: 2px 0 4px rgba(0, 0, 0, 0.4);
+  --rail-shadow: none;
   --rail-icon: #7db6ec;
   --rail-icon-active: #b9dd62;
-  --rail-text: #c2c7d0;
-  --rail-hover: rgba(255, 255, 255, 0.07);
-  --field-border: rgba(255, 255, 255, 0.23);
+  --rail-text: #f4f5f7;
+  --rail-hover: rgba(255, 255, 255, 0.08);
+  --field-border: rgba(255, 255, 255, 0.17);
   --field-bg: #15181e;
-  --table-border: rgba(255, 255, 255, 0.1);
-  --table-head-bg: #1c2027;
-  --table-head-fg: #969daa;
-  --table-row-line: rgba(255, 255, 255, 0.06);
-  --table-stripe: rgba(255, 255, 255, 0.025);
-  --label-fg: #c2c7d0;
+  --table-border: rgba(255, 255, 255, 0.08);
+  --table-head-bg: #1a1e25;
+  --table-head-fg: #c2c7d0;
+  --table-row-line: rgba(255, 255, 255, 0.08);
+  --table-stripe: transparent;
+  --label-fg: #f4f5f7;
   --outline-fg: #7db6ec;
 }
 

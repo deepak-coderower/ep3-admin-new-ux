@@ -11,7 +11,7 @@
 .btn:disabled { opacity: .45; cursor: default; pointer-events: none; }
 .btn svg { width: 16px; height: 16px; }
 .btn-default { background: var(--btn-gradient); color: #fff; box-shadow: var(--btn-shadow); }
-.btn-default:hover { filter: brightness(1.08); }
+.btn-default:hover { background: var(--primary-hover); }
 .btn-destructive { background: var(--destructive); color: var(--destructive-foreground); }
 .btn-destructive:hover { background: var(--destructive-hover); }
 .btn-secondary { background: transparent; color: var(--outline-fg); box-shadow: inset 0 0 0 2px var(--outline-fg); }
@@ -162,7 +162,7 @@ input[type="search"].input::-webkit-search-cancel-button { cursor: pointer; }
 .table-head:last-child { border-right: 0; }
 .table-cell { padding: 10px 14px; border-bottom: 1px solid var(--table-row-line); vertical-align: middle; font-size: 13.5px; }
 .table tbody tr:nth-child(even) { background: var(--table-stripe); }
-.table .acts .btn-ghost { color: var(--brand-blue); }
+.table .acts .btn-ghost { color: var(--subtle-foreground); }
 .table tbody tr:last-child .table-cell { border-bottom: 0; }
 .table .num { text-align: right; font-variant-numeric: tabular-nums; }
 .table .acts { width: 1%; white-space: nowrap; text-align: right; padding-left: 4px; padding-right: 8px; }

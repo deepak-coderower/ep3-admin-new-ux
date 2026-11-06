@@ -1,4 +1,5 @@
 // /instrument: detail view, ?mode=edit, ?mode=new[&productId=] and ?mode=copy. Ported from instrument-pages.js.
+import { useState } from 'react'
 import { Link, Navigate, useNavigate, useSearchParams } from 'react-router'
 import { CalendarCheck, Copy, Pencil, TriangleAlert } from 'lucide-react'
 import { StatusBadge } from '@/components/ui/badge'
@@ -8,6 +9,7 @@ import { Banner, Crumb, LargeTitle, useTitle } from '@/components/app/page'
 import { SectionRail } from '@/components/app/section-rail'
 import { MarketFormPage, SectionsRead, createMarketForm, revealFormErrors, validateSections } from '@/components/market/market-form'
 import { MarketNotFound } from '@/components/market/module-head'
+import { previousPage } from '@/lib/nav-history'
 import { IT, LIMIT_GROUPS, OPPOSING, isContinuous, isLocked } from '@/data/market-config'
 import { instrumentSections } from '@/data/market-sections'
 import { blankMarketValues } from '@/data/market-seed'
@@ -166,6 +168,9 @@ function InstrumentForm({ mode, init }: { mode: FormMode; init: () => any }) {
   const [form, refresh] = useForm(() => createMarketForm(editing ? 'edit' : 'create', init(), instrumentSections))
   const title = editing ? 'Edit Instrument' : 'Create Instrument'
   const originalId = form.original.id
+  // Back goes where the person came from: the instrument's view if they opened Edit there, otherwise the list.
+  const [fromView] = useState(() => previousPage() === instHref(originalId))
+  const back = editing && fromView ? { href: instHref(originalId), label: originalId } : { href: '/instruments', label: 'Instruments' }
 
   const submit = async () => {
     const v = form.draft
@@ -213,9 +218,9 @@ function InstrumentForm({ mode, init }: { mode: FormMode; init: () => any }) {
       validate={validateInstrument}
       onSubmit={submit}
       onChange={k => onInstrumentChange(form, k)}
-      crumb={editing ? { href: instHref(originalId), label: originalId } : { href: '/instruments', label: 'Instruments' }}
+      crumb={back}
       title={title}
-      backHref={editing ? instHref(originalId) : '/instruments'}
+      backHref={back.href}
       saveLabel={editing ? 'Save' : 'Create Instrument'}
       instIdList
       eventIds={eventIdsFor(form.draft.productId)}

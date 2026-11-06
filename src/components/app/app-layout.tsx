@@ -3,6 +3,7 @@ import { Navigate, Outlet, useLocation } from 'react-router'
 import { Menu } from 'lucide-react'
 import { AppSidebar } from '@/components/app/app-sidebar'
 import { Ep3Logo } from '@/components/app/logo'
+import { recordPage } from '@/lib/nav-history'
 import { isSignedIn } from '@/lib/session'
 import { cn } from '@/lib/utils'
 
@@ -14,6 +15,7 @@ export function AppLayout() {
 
   // Each page starts at the top with its title focused, and the expanded menu closes.
   useEffect(() => {
+    recordPage(location.pathname + location.search)
     setOpen(false)
     if (mainRef.current) mainRef.current.scrollTop = 0
     const title = document.querySelector<HTMLElement>('.large-title')
