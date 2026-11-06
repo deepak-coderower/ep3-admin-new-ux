@@ -121,7 +121,7 @@ input[type="search"].input::-webkit-search-cancel-button { cursor: pointer; }
 .dialog {
   position: fixed; left: 50%; top: 50%; z-index: 81; transform: translate(-50%, -50%);
   display: flex; flex-direction: column; width: min(540px, calc(100vw - 24px)); max-height: min(86vh, 760px);
-  background: var(--background); color: var(--foreground); border-radius: 6px; box-shadow: var(--shadow-lg); overflow: hidden; outline: none;
+  background: var(--background); color: var(--foreground); border-radius: 12px; box-shadow: var(--shadow-lg); overflow: hidden; outline: none;
 }
 .dialog[data-state="open"] { animation: zoom-in .26s var(--ease); }
 .dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 12px 12px 18px; border-bottom: 1px solid var(--border); }
