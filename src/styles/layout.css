@@ -13,7 +13,8 @@
 .brand-text { min-width: 0; line-height: 1.2; white-space: nowrap; }
 .brand-text strong { display: block; font-size: 13px; font-weight: 650; }
 .brand-text span { display: block; font-size: 11.5px; color: var(--muted-foreground); }
-.side-scroll { flex: 1; min-height: 0; margin: 6px -4px 0; padding: 0 4px 8px; overflow: hidden auto; }
+.side-scroll { flex: 1; min-height: 0; margin: 6px -4px 0; padding: 0 4px 8px; overflow: hidden auto; scrollbar-width: none; }
+.side-scroll::-webkit-scrollbar { display: none; }
 .side-group { margin-top: 14px; }
 .side-label { padding: 0 11px 5px; font-size: 12.5px; font-weight: 500; color: var(--muted-foreground); white-space: nowrap; }
 .nav-item {
