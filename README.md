@@ -18,6 +18,11 @@ npm run build    # type-check + production build
 Any username/password logs in. Data is seeded on first load and saved to `localStorage`
 (clear site data to reset).
 
+## Deploy (Vercel)
+
+Import the repo in Vercel; `vercel.json` sets the Vite build (`npm run build` → `dist`) and rewrites
+every non-asset path to `index.html`, so client routes like `/firm?id=…` work on refresh and deep links.
+
 ## Structure
 
 ```

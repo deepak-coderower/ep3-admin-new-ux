@@ -1,1 +1,33 @@
-/* Markets: market-instruments */
+/* Markets: Instruments list, Change State dialog, settlement price sheets. */
+
+/* ---------- Filters ---------- */
+.filters .inst-filter-input { width: 170px; }
+.filters .date-trigger { min-width: 215px; }
+.filters-more { padding-top: 12px; border-top: 1px solid var(--border); }
+.count-badge { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--primary); color: #fff; font-size: 11.5px; font-weight: 620; }
+
+/* ---------- Selection ---------- */
+.sel-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 7px 8px 7px 14px; margin-bottom: 10px; border-radius: var(--radius-md); background: var(--accent); font-weight: 560; }
+.sel-bar > span:first-child { margin-right: 6px; }
+.sel-bar-blocked { display: inline-flex; cursor: not-allowed; }
+
+/* ---------- Table ---------- */
+.card-clip { overflow: hidden; }
+.check-cell { width: 1%; padding-right: 0; }
+.check-cell .checkbox { display: grid; }
+.desc-cell { max-width: 210px; overflow: hidden; text-overflow: ellipsis; }
+.house-cell { max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+.inst-table .num { min-width: 76px; }
+.inst-table .acts { box-shadow: -1px 0 0 var(--border), -10px 0 12px -10px var(--scroll-thumb-hover); }
+.inst-table .row-link:hover .acts, .inst-table .table-row[data-state="open"] .acts { background: linear-gradient(var(--accent), var(--accent)), var(--card); }
+.text-bad { color: var(--bad-fg); font-weight: 500; }
+@media (min-width: 1700px) {
+  .desc-cell { max-width: 340px; }
+  .house-cell { max-width: 240px; }
+}
+
+/* ---------- Change State dialog ---------- */
+.card-acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.sheet-extra { margin-top: 14px; }
+.sheet-extra .section-title { margin-bottom: 8px; }
+.sheet-extra .card-acts { margin-top: 12px; }

@@ -1,6 +1,6 @@
 import {
   BadgeCheck, Bell, Building2, CalendarCheck, Check, CircleDollarSign, CreditCard, Octagon, Pause, Play,
-  ListIcon, RotateCcw, Search, Shield, SquareTerminal, Trash2, TriangleAlert, UsersRound, CircleDot, type LucideIcon,
+  ListIcon, RotateCcw, Search, Shield, SquareTerminal, Trash2, TriangleAlert, UsersRound, CircleDot, X, type LucideIcon,
 } from 'lucide-react'
 
 /** Maps the prototype's sprite icon names to lucide icons. */
@@ -24,4 +24,5 @@ export const ICONS: Record<string, LucideIcon> = {
   play: Play,
   stop: Octagon,
   warn: TriangleAlert,
+  x: X,
 }

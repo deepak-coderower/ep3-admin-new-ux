@@ -1,1 +1,21 @@
-/* Markets: market-instrument-pages */
+/* Markets: market-instrument-pages (instrument detail/form, market stats, history, books). */
+
+/* ---------- Instrument detail ---------- */
+.firm-meta .link-btn { font-weight: 500; }
+
+/* ---------- Historical market stats ---------- */
+.history-card { overflow: hidden; }
+.history-filters .date-trigger { min-width: 230px; }
+
+/* ---------- Books ---------- */
+.book-card { overflow-x: auto; }
+.book-table .buy { background: var(--buy-bg); }
+.book-table .sell { background: var(--sell-bg); }
+.book-table .table-cell { white-space: nowrap; }
+.book-table .link-btn { font-size: 13px; }
+.btn.book-cancel { width: 26px; height: 26px; margin-left: 4px; vertical-align: middle; }
+.btn.book-cancel svg { width: 13px; height: 13px; }
+
+@media (max-width: 680px) {
+  .history-filters .date-trigger { min-width: 0; }
+}
